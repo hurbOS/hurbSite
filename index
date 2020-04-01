@@ -29,17 +29,28 @@
     <style></style>
   </head>
   <body>
-
-    <br>
-
+    <br> 
     <center>
       <table class="sample">
         <tbody>
           <tr>
-            <td>
-              
+            <td id="titlebar">
+		    <img src="favicons/mainlogo.png" alt="Hurb logo"/>
+		    <h1 class="sp"><i id="hrb">hurb</i><i id="indus">Indutries</i></h1>
             </td>
-          </tr>
+	    <td id="nav">
+		    <button onclick="window.location.href = 'index';" target="_blank">Home</button><p class="sp">  |  </p>
+		    <button onclick="window.location.href = '';" target="_blank">HurbOS</button><p class="sp">  |  </p>
+		    <button onclick="window.location.href = '';" target="_blank">HurbIM</button><p class="sp">  |  </p>
+		    <button onclick="window.location.href = 'https://discord.gg/GKdZwRa';" target="_blank">Discord</button><p class="sp">  |  </p>
+		    <button onclick="href = 'https://github.com/hurbOS';" target="_blank">Github</button><p class="sp">  |  </p>
+		    <button onclick="href = '';">Contribute</button>
+	   </td>
+	   <td id="info">
+		   <h2>A little bit about us:</h2>
+		   <p></p>
+	   </td>
+	   </tr>
         </tbody>
       </table>
     </center>

@@ -15,14 +15,34 @@ table.sample {
     border-style: inset;
     border-color: black;
     background: white
-    vertical-align: top
+    vertical-align: top;
  }
  table
  {
     width:800px;
-    height:950px;
+    height:1020px;
  }
  td
  {
-    vertical-align:top
+    vertical-align:top;
+    width:795px;
+    border:3px;
+    padding:10px;
+    margin:1px; 
+    float:left;  
+}
+ #hrb{
+    color:#7abee6;
  }
+ #indus{
+    color:#d14141;
+ }
+ img{
+    padding:30px;
+    width:150px;
+    height:150px;
+    display:inline;
+ }
+.sp{
+    display:inline;
+}
