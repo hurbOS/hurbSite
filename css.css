@@ -31,7 +31,7 @@
   float:left;
 }
 .sp{
-  display:inline;
+  display: inline;
 }
 .info{
     margin:15px
@@ -43,5 +43,12 @@
 #credit{
   margin: 15px;
   color:grey;
-  font-size:small;
+  font-size:10px;
+}
+#nav{
+  float: right;
+  font-size:10px;
+  display:inline;
+  margin-top:25px;
+  margin-right: 4px;
 }
