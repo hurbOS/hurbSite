@@ -39,16 +39,25 @@
 		    <h1 class="sp"><i id="hrb">hurb</i><i id="indus">Indutries</i></h1>
             </td>
 	    <td id="nav">
-		    <button onclick="window.location.href = 'index';" target="_blank">Home</button><p class="sp">  |  </p>
-		    <button onclick="window.location.href = '';" target="_blank">HurbOS</button><p class="sp">  |  </p>
-		    <button onclick="window.location.href = '';" target="_blank">HurbIM</button><p class="sp">  |  </p>
-		    <button onclick="window.location.href = 'https://discord.gg/GKdZwRa';" target="_blank">Discord</button><p class="sp">  |  </p>
-		    <button onclick="href = 'https://github.com/hurbOS';" target="_blank">Github</button><p class="sp">  |  </p>
-		    <button onclick="href = '';">Contribute</button>
+		    <a href="index"><button>Home</button></a><p class="sp">  |  </p>
+		    <a href=""><button>HurbOS</button></a><p class="sp">  |  </p>
+		    <a href=""><button>HurbIM</button></a><p class="sp">  |  </p>
+		    <a href="https://discord.gg/GKdZwRa" target="_blank"><button>Discord</button></a><p class="sp">  |  </p>
+		    <a href="https://github.com/hurbOS" target="_blank"><button>Github</button></a><p class="sp">  |  </p>
+		    <a href=""><button>Contribute</button></a>
 	   </td>
-	   <td id="info">
-		   <h2>A little bit about us:</h2>
-		   <p></p>
+	   <td>
+		   <h4 class="info">A little bit about us:</h4>
+		   <p class="info">....</p>
+	   	   <h4 class="info">What is Hurb?</h4>
+		   <p class="info">....</p>
+ 	   </td>
+	   <td>
+       <center>
+         <a href="https://discord.gg/GKdZwRa" target="_blank"><img id="foot" src="images/Discord-Logo-Black"/></a>
+         <a href="https://github.com/hurbOS" target="_blank"><img id="foot" src="images/Github-icon.png"/></a>
+         <p> Thouu & Wilson4573</p>
+        </center>
 	   </td>
 	   </tr>
         </tbody>

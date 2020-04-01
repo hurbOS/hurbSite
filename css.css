@@ -1,26 +1,25 @@
 @charset "UTF-8";
 
-table.sample {
+ table.sample {
     border-width: 1px;
       border-spacing: 1px;
       border-style: outset;
       border-color: black;
       border-collapse: separate;
-      background: white
-      vertical-align: top
+      background: white;
+      vertical-align: top;
  }
   table.sample td {
     border-width: 1px;
     padding: 1px;
     border-style: inset;
     border-color: black;
-    background: white
+    background: white;
     vertical-align: top;
  }
  table
  {
     width:800px;
-    height:1020px;
  }
  td
  {
@@ -38,11 +37,17 @@ table.sample {
     color:#d14141;
  }
  img{
-    padding:30px;
-    width:150px;
-    height:150px;
-    display:inline;
+    padding:20px;
+    width:100px;
+    height:100px;
  }
 .sp{
     display:inline;
+}
+.info{
+    margin:15px
+}
+#foot{
+   height:10px;
+   width:10px;
 }
