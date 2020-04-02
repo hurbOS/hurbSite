@@ -29,13 +29,11 @@
   vertical-align: top;
  }
 
- table
- {
+table{
   width:800px;
- }
+}
 
- td
- {
+td{
   vertical-align:top;
   width:795px;
   border:3px;
@@ -52,11 +50,11 @@
     margin:15px
 }
 
-.sourceCodePro {
+.sCP {
   font-family: sourceCodePro;
 }
 
-.robotoSlab {
+.rS {
   font-family: RobotoSlab;
 }
 
