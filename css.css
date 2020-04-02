@@ -10,14 +10,6 @@
   src: url(fonts/robotoSlab/RobotoSlab-Regular.ttf);
 }
 
-sourceCodePro {
-  font-family: sourceCodePro;
-}
-
-robotoSlab {
-  font-family: RobotoSlab-Regular
-}
-
  table.sample {
   border-width: 1px;
   border-spacing: 1px;
@@ -58,6 +50,14 @@ robotoSlab {
 
 .info{
     margin:15px
+}
+
+.sourceCodePro {
+  font-family: sourceCodePro;
+}
+
+.robotoSlab {
+  font-family: RobotoSlab;
 }
 
 #foot{
