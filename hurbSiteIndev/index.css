@@ -76,9 +76,3 @@ td{
   margin-top:12.5px;
   margin-right: 50px;
 }
-dt:before {
-  content: 'Q. ';
-}
-dd:before {
-  content: 'A. ';
-}
