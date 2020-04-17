@@ -27,7 +27,7 @@
       var circlestickermed="";
       var circlestickerlarge="";
     </script>
-    <script type="text/javascript" src="../../../../keys.js"></script>
+    <script type="text/javascript" src="../../keys.js"></script>
 
     <link rel="stylesheet" type="text/css" href="items.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107936710-4"></script>
@@ -98,8 +98,8 @@
 
                       <script>
                       (function() {
-                        var stripe = Stripe(testapikey);
-                        var currentsku=""
+                        var stripe = Stripe(apikey);
+                        var currentsku="";
                         var e = document.getElementById("size");
                         var strUser = e.options[e.selectedIndex].value;
                         var checkoutButton = document.getElementById("235678765456789");
@@ -114,7 +114,6 @@
                           if(e="3"){
                             currentsku = circlestickerlarge;
                           }
-                          console.log(currentsku)
                           stripe.redirectToCheckout({
                             items: [{sku: currentsku, quantity: 1}],
                             billing_address_collection: 'required',

@@ -20,6 +20,13 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script type="text/javascript">
+      var apikey="";
+      var Stickersmall="";
+      var Stickermed="";
+      var Stickerlarge="";
+    </script>
+    <script type="text/javascript" src="../../keys.js"></script>
 
     <link rel="stylesheet" type="text/css" href="items.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107936710-4"></script>
@@ -70,7 +77,59 @@
                           Medium -      4"x4"<br>
                           Large  -      5.5"x5.5"<br><br>
                         </p>
+                        <select id="size" class="dropbtn">
+                        <option value="1">Small</option>
+                        <option value="2">Medium</option>
+                        <option value="3">Large</option>
+                      </select>
+                      <br><br><br><br><br>
+                      <script src="https://js.stripe.com/v3"></script>
 
+                      <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+                      <button
+                        id="235678765456789"
+                        role="link"
+                      >
+                        Checkout
+                      </button>
+
+                      <div id="error-message"></div>
+
+                      <script>
+                      (function() {
+                        var stripe = Stripe(apikey);
+                        var currentsku="";
+                        var e = document.getElementById("size");
+                        var strUser = e.options[e.selectedIndex].value;
+                        var checkoutButton = document.getElementById("235678765456789");
+                        checkoutButton.addEventListener('click', function () {
+                          var strUser = e.options[e.selectedIndex].value;
+                          if(e="1"){
+                            currentsku = Stickersmall;
+                          }
+                          if(e="2"){
+                            currentsku = Stickermed;
+                          }
+                          if(e="3"){
+                            currentsku = Stickerlarge;
+                          }
+                          stripe.redirectToCheckout({
+                            items: [{sku: currentsku, quantity: 1}],
+                            billing_address_collection: 'required',
+                            successUrl: window.location.protocol + '//shop.hurbindustries.net/success.html',
+                            cancelUrl: window.location.protocol + '//shop.hurbindustries.net/canceled.html',
+                          })
+                          .then(function (result) {
+                            if (result.error) {
+                              // If `redirectToCheckout` fails due to a browser or network
+                              // error, display the localized error message to your customer.
+                              var displayError = document.getElementById('error-message');
+                              displayError.textContent = result.error.message;
+                            }
+                          });
+                        });
+                      })();
+                      </script>
                       </td>
                     </tr>
                   </table>
