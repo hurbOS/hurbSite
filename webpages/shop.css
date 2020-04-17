@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: sourceCodePro;
+  src: url(fonts/sourceCodePro/SourceCodePro-Regular.ttf);
+}
+
+@font-face {
+  font-family: robotoSlab;
+  src: url(fonts/robotoSlab/RobotoSlab-Regular.ttf);
+}
+
+ table.sample {
+  border-width: 1px;
+  border-spacing: 1px;
+  border-style: outset;
+  border-color: black;
+  border-collapse: separate;
+  background: white;
+  vertical-align: top;
+ }
+
+.main{
+  border-width: 1px;
+  padding: 1px;
+  border-style: inset;
+  border-color: black;
+  background: white;
+  vertical-align: top;
+  width:795px;
+  float:left;
+ }
+
+table{
+  width:800px;
+}
+
+td{
+  border:3px;
+  padding:10px;
+  margin:1px;
+}
+
+.sp{
+  display: inline;
+}
+
+.info{
+    margin:15px
+}
+
+.sCP {
+  font-family: sourceCodePro;
+  color:grey;
+}
+
+.rS {
+  font-family: RobotoSlab;
+  color:grey;
+}
+
+#foot{
+  height:20px;
+  width:20px;
+}
+
+#credit{
+  margin: 15px;
+  color:grey;
+  font-size:10px;
+}
+
+#nav{
+  float: right;
+  font-size:10px;
+  display:inline;
+  margin-top:12.5px;
+  margin-right:69px;
+}
+.item{
+  border-width: 1px;
+  padding: 5px;
+  border-style: inset;
+  border-color: black;
+  background: white;
+  vertical-align: center;
+  height:200px;
+}
+.label{
+  border-width: 1px;
+  padding-bottom: 15px;
+  border-style: inset;
+  border-color: black;
+  background: white;
+  vertical-align: center;
+  height:40px;
+}
+#catalog{
+  width:791px
+}
+.catalog{
+  width:180px;
+  height:180px;
+}
