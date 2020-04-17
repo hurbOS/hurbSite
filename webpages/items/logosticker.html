@@ -27,7 +27,6 @@
       var circlestickermed="";
       var circlestickerlarge="";
       var currentsku="";
-      var e="";
     </script>
     <script type="text/javascript" src="../../keys.js"></script>
 
@@ -80,47 +79,46 @@
                           Medium -      4"x4"<br>
                           Large  -      5.5"x5.5"<br><br>
                         </p>
-                        <select id="size" class="dropbtn">
-                        <option value="1">Small</option>
-                        <option value="2">Medium</option>
-                        <option value="3">Large</option>
-                      </select>
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                        <script>
+                          $(document).ready(function(){
+                            $('select').change(function(){
+                                var e =($('option:selected',this).index());
+                                if(e==1){
+                                  currentsku=circlestickersmall;
+                                }
+                                if(e==2){
+                                  currentsku=circlestickermed;
+                                }
+                                if(e==3){
+                                  currentsku=circlestickerlarge;
+                                }
+                            });
+                          });
+                          </script>
+                        <select name="sizes" class="dropbtn">
+                        <option selected="selected">-Select A Size-</option>
+                        <option>Small</option>
+                        <option>Medium</option>
+                        <option>Large</option>
+                        </select>
                       <br><br><br><br><br>
                       <script src="https://js.stripe.com/v3"></script>
 
                       <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
                       <button
-                        onclick="getOption()"
                         id="235678765456789"
                         role="link"
                       >
                         Checkout
                       </button>
-
                       <div id="error-message"></div>
-
-                      <script type="text/javascript">
-                           function getOption() {
-                               selectElement =
-                                        document.querySelector('#size');
-                               e = selectElement.value;
-                           }
-                       </script>
-
                       <script>
                       (function() {
                         var stripe = Stripe(apikey);
                         var checkoutButton = document.getElementById("235678765456789");
                         checkoutButton.addEventListener('click', function () {
-                          if(e="1"){
-                            currentsku = Stickersmall;
-                          }
-                          if(e="2"){
-                            currentsku = Stickermed;
-                          }
-                          if(e="3"){
-                            currentsku = Stickerlarge;
-                          }
+
                           stripe.redirectToCheckout({
                             items: [{sku: currentsku, quantity: 1}],
                             successUrl: window.location.protocol + '//hurbindustries.net/success.html',
