@@ -22,12 +22,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <script type="text/javascript">
-      var testapikey="";
-      var testskusmall="";
-      var testskumed="";
-      var testskularge="";
+      var apikey="";
+      var circlestickersmall="";
+      var circlestickermed="";
+      var circlestickerlarge="";
     </script>
-    <script type="text/javascript" src="../keys.js"></script>
+    <script type="text/javascript" src="../../keys.js"></script>
 
     <link rel="stylesheet" type="text/css" href="items.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107936710-4"></script>
@@ -50,7 +50,7 @@
           <tbody>
             <tr>
               <td class="main"  id="titlebar">
-                <a href="http://hurbindustries.net">
+                <a href="../../index.html">
                 <img src="../images/logo2.png" alt="Hurb logo"/>
                 </a>
                 <div id="nav">
@@ -106,13 +106,13 @@
                         checkoutButton.addEventListener('click', function () {
                           var strUser = e.options[e.selectedIndex].value;
                           if(e="1"){
-                            currentsku = testskusmall;
+                            currentsku = circlestickersmall;
                           }
                           if(e="2"){
-                            currentsku = testskumed;
+                            currentsku = circlestickermed;
                           }
                           if(e="3"){
-                            currentsku = testskularge;
+                            currentsku = circlestickerlarge;
                           }
                           console.log(currentsku)
                           stripe.redirectToCheckout({
