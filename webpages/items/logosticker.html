@@ -26,6 +26,8 @@
       var circlestickersmall="";
       var circlestickermed="";
       var circlestickerlarge="";
+      var currentsku="";
+      var e="";
     </script>
     <script type="text/javascript" src="../../keys.js"></script>
 
@@ -88,6 +90,7 @@
 
                       <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
                       <button
+                        onclick="getOption()"
                         id="235678765456789"
                         role="link"
                       >
@@ -96,23 +99,27 @@
 
                       <div id="error-message"></div>
 
+                      <script type="text/javascript">
+                           function getOption() {
+                               selectElement =
+                                        document.querySelector('#size');
+                               e = selectElement.value;
+                           }
+                       </script>
+
                       <script>
                       (function() {
                         var stripe = Stripe(apikey);
-                        var currentsku="";
-                        var e = document.getElementById("size");
-                        var strUser = e.options[e.selectedIndex].value;
                         var checkoutButton = document.getElementById("235678765456789");
                         checkoutButton.addEventListener('click', function () {
-                          var strUser = e.options[e.selectedIndex].value;
                           if(e="1"){
-                            currentsku = circlestickersmall;
+                            currentsku = Stickersmall;
                           }
                           if(e="2"){
-                            currentsku = circlestickermed;
+                            currentsku = Stickermed;
                           }
                           if(e="3"){
-                            currentsku = circlestickerlarge;
+                            currentsku = Stickerlarge;
                           }
                           stripe.redirectToCheckout({
                             items: [{sku: currentsku, quantity: 1}],
