@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="apple-touch-icon" sizes="57x57" href="../favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicons/favicon-16x16.png">
+    <link rel="manifest" href="../favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script type="text/javascript">
+      var apikey="";
+      var circlestickersmall="";
+      var circlestickermed="";
+      var circlestickerlarge="";
+    </script>
+    <script type="text/javascript" src="../../keys.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="items.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107936710-4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-107936710-4');
+    </script>
+    <title>hurbIndustries - Shop</title>
+    <meta content="">
+  </head>
+  <body>
+
+      <br>
+
+      <center>
+        <table class="sample">
+          <tbody>
+            <tr>
+              <td class="main"  id="titlebar">
+                <a href="../../index.html">
+                <img src="../images/logo2.png" alt="Hurb logo"/>
+                </a>
+                <div id="nav">
+                  <a href="../webpages/hurbOS.html"><button>hurbOS</button></a><p class="sp">  &nbsp;  </p>
+                  <a href="../webpages/hurbIM.html"><button>hurbIM</button></a><p class="sp">  &nbsp;  </p>
+                  <a href="https://discord.gg/GKdZwRa" target="_blank"><button>Discord</button></a><p class="sp">  &nbsp;  </p>
+                  <a href="https://github.com/hurbOS" target="_blank"><button>Github</button></a><p class="sp">  &nbsp;  </p>
+                  <a href="../webpages/hurbShop.html"><button>Shop</button></a><p class="sp"></p>
+                </div>
+              </td>
+              <td class="main" >
+                <div>
+                  <table id="catalog">
+                    <tr>
+                      <td class="item">
+                        <img class="catalog" src="../images/CircleSticker.png"
+                      </td>
+                      <td class="desc">
+                        <h5>Hurb Industries Circular Logo Sticker - 1pc</h5>
+                        <p class="sCP">High quality Kiss sticker available in 3 sizes. <br><br>
+                          The ideal addition to a laptop, water bottle or notepad! Show your support by wearing the hurb logo. All profit goes towards hurbindustries, and  all profit will help to fund the development of our free software.<br></p>
+                        <h6>Sizes:</h6>
+                        <p class="sCP">
+                          Small  -      3"x3"<br>
+                          Medium -      4"x4"<br>
+                          Large  -      5.5"x5.5"<br><br>
+                        </p>
+                        <select id="size" class="dropbtn">
+                        <option value="1">Small</option>
+                        <option value="2">Medium</option>
+                        <option value="3">Large</option>
+                      </select>
+                      <br><br><br><br><br>
+                      <script src="https://js.stripe.com/v3"></script>
+
+                      <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+                      <button
+                        id="235678765456789"
+                        role="link"
+                      >
+                        Checkout
+                      </button>
+
+                      <div id="error-message"></div>
+
+                      <script>
+                      (function() {
+                        var stripe = Stripe(testapikey);
+                        var currentsku=""
+                        var e = document.getElementById("size");
+                        var strUser = e.options[e.selectedIndex].value;
+                        var checkoutButton = document.getElementById("235678765456789");
+                        checkoutButton.addEventListener('click', function () {
+                          var strUser = e.options[e.selectedIndex].value;
+                          if(e="1"){
+                            currentsku = circlestickersmall;
+                          }
+                          if(e="2"){
+                            currentsku = circlestickermed;
+                          }
+                          if(e="3"){
+                            currentsku = circlestickerlarge;
+                          }
+                          console.log(currentsku)
+                          stripe.redirectToCheckout({
+                            items: [{sku: currentsku, quantity: 1}],
+                            billing_address_collection: 'required',
+                            successUrl: window.location.protocol + '//shop.hurbindustries.net/success.html',
+                            cancelUrl: window.location.protocol + '//shop.hurbindustries.net/canceled.html',
+                          })
+                          .then(function (result) {
+                            if (result.error) {
+                              // If `redirectToCheckout` fails due to a browser or network
+                              // error, display the localized error message to your customer.
+                              var displayError = document.getElementById('error-message');
+                              displayError.textContent = result.error.message;
+                            }
+                          });
+                        });
+                      })();
+                      </script>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <center>
+         <div id="credit">
+            <a href="https://discord.gg/GKdZwRa" target="_blank"><img id="foot" src="../images/Discord.png"/></a>
+            <a href="https://github.com/hurbOS/hurbSite" target="_blank"><img id="foot" src="../images/Github-icon.png"/></a>
+            <p> Website by <u><a href="https://github.com/thouu" target="_blank"style="color:grey">Thou</a></u> & <u><a href="https://github.com/Ewilso" style="color:grey" target="blank">Wilson4573</a></u> <br>Last edited 04-16-2020 (US)</p>
+          </div>
+        </center>
+
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+      </center>
+  </body>
+</html>
