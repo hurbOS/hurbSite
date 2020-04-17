@@ -116,7 +116,6 @@
                           }
                           stripe.redirectToCheckout({
                             items: [{sku: currentsku, quantity: 1}],
-                            billing_address_collection: 'required',
                             successUrl: window.location.protocol + '//shop.hurbindustries.net/success.html',
                             cancelUrl: window.location.protocol + '//shop.hurbindustries.net/canceled.html',
                           })
