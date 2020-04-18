@@ -104,8 +104,6 @@
                         </select>
                       <br><br><br><br><br>
                       <script src="https://js.stripe.com/v3"></script>
-
-                      <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
                       <button
                         id="235678765456789"
                         role="link"
@@ -123,11 +121,12 @@
                             items: [{sku: currentsku, quantity: 1}],
                             successUrl: window.location.protocol + '//hurbindustries.net/success.html',
                             cancelUrl: window.location.protocol + '//hurbindustries.net/canceled.html',
+                            shippingAddressCollection: {
+                              allowedCountries: ['US', 'CA','GB'],
+                            }
                           })
                           .then(function (result) {
                             if (result.error) {
-                              // If `redirectToCheckout` fails due to a browser or network
-                              // error, display the localized error message to your customer.
                               var displayError = document.getElementById('error-message');
                               displayError.textContent = result.error.message;
                             }
